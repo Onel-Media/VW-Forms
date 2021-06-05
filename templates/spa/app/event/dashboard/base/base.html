@@ -1,0 +1,466 @@
+{% load staticfiles %}
+{% load widget_tweaks %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="author" content="Volkswagen NAR Supplier Quality Day 2021">
+        <!-- BEGINS description -->
+        <meta name="description" content="{% block description %}  {% endblock %}">
+        <!-- ENDS description -->
+        <!-- BEGINS Favicon -->
+        <link rel="apple-touch-icon" sizes="76x76" href="{% static 'assets/img/Icono_supplier_day.jpeg' %}" />
+        <link rel="icon" href="{% static 'assets/img/Icono_supplier_day.jpeg' %}" type="image/png">
+        <!-- ENDS Favicon -->
+        <!-- BEGINS title --> 
+        <title>{% block title %} {% endblock %}</title>
+        <!-- ENDS title -->
+        <!-- BEGINS STYLES -->
+        <!-- Argon CSS -->
+        <link rel="stylesheet" href="{% static 'assets/css/argon.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'assets/css/custom-styles.css' %}" type="text/css">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+        <!-- Icons -->
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+        <link rel="stylesheet" href="{% static 'assets/vendor/nucleo/css/nucleo.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'assets/vendor/fontawesome/fontawesome-free/css/all.min.css' %}" type="text/css">
+        <!-- ENDS STYLES -->
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src='https://www.googletagmanager.com/gtag/js?{{ gtag | safe}}'></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '{{ gtag | safe}}');
+        </script>
+    </head>
+    <!-- BEGINS BODY -->
+    <body>
+        <style>
+            .itemsContainer{float:left;position:relative}.itemsContainer:hover .play{display:block}.play{position:absolute;display:none;top:20%;width:40px;margin:0 auto;left:0;right:0;z-index:100}
+        </style>
+        <style>
+            .nav-link-text {
+                font-size: 16px;
+            }
+            .card-title {
+                font-size: 16px;
+            }
+        </style>
+        <!-- Chromecast SDK -->
+            <script type="text/javascript" src="//www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
+            <!-- THEOplayer library and css -->
+            <script type="text/javascript" src="https://cdn.myth.theoplayer.com/591eb373-a225-467e-9960-bbb2f5db6342/THEOplayer.js"></script>
+            <link rel="stylesheet" type="text/css" href="https://cdn.myth.theoplayer.com/591eb373-a225-467e-9960-bbb2f5db6342/ui.css" />
+            <!-- Customization Theoplayer css styles -->
+            <style>
+                .theo-primary-color,
+                .vjs-selected {
+                    color: #ffffff !important;
+                }
+                .theo-primary-background {
+                    color: #000000 !important;
+                    background-color: #4a90e2 !important;
+                }
+                .theo-secondary-color {
+                    color: #ffffff !important;
+                }
+                .theo-secondary-background {
+                    color: #000000 !important;
+                    background-color: #ffffff !important;
+                }
+                .theo-tertiary-color {
+                    color: #000000 !important;
+                }
+                .theo-tertiary-background {
+                    color: #ffffff !important;
+                    background-color: #000000 !important;
+                }
+                .vjs-play-control {
+                    display: none !important;
+                }
+            </style>
+        <!-- BEGINS SIDEBAR -->
+        {% include './sidebar.html' %}
+        <!-- ENDS SIDEBAR -->
+        <!-- BEGINS Main content -->
+        <div class="main-content" id="panel" style="background-image: url('{% static 'assets/img/IMAGEN-DE-FONDO-3_vw.jpeg' %}') !important; background-repeat: repeat; background-size: 1100px; padding-right:-0px; margin-right:-0px;">
+            <!-- BEGINS navbar -->
+            {% include './navbar.html' %}
+            <!-- ENDS navbar -->
+            <!-- BEGINS dashboard header -->
+            {% include './dashboard-header.html' %}
+            <!-- ENDS dashboard header -->
+            <!-- BEGINS CONTENT-->
+            <div class="container-fluid mt--6" style="padding-left:0px; margin-left:0px; padding-right:0px; margin-right:0px;">
+                {% block content %}
+                {% endblock %}
+            </div>
+            <!-- ENDS CONTENT-->
+            <!-- BEGIN footer-->
+            {% include './footer.html' %}
+            <!-- END footer-->
+            <!-- Modal -->
+            <div class="modal fade" id="todaslasreuniones" tabindex="-1" role="dialog" aria-labelledby="donativosMexicoNorte" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Lista de Reuniones</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body text-justify py-1">
+                      <div class="row">
+                          <div class="col-lg-6">
+                              <a class="btn btn-outline-darker my-1" target="_blank" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_MzU2ZTk3YjAtNTA2Mi00YWQ1LWEzMzAtYWJkOWVjZTc1MmFi%40thread.v2/0?context=%7b%22Tid%22%3a%220a639cef-3452-4d82-8a6f-11f49ee14751%22%2c%22Oid%22%3a%2299dc5c82-d81c-4d92-9d97-ecb11bf453cc%22%7d">Ingresa a tu Reunion: TEAM 1 - Sesión 1</a>
+                          </div>
+                          <div class="col-lg-6">
+                              <a class="btn btn-outline-darker my-1" target="_blank" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_YzVkYzZiMTAtN2Q4NS00MmE3LWE0MmYtYzUxOTQyNWRiNWI4%40thread.v2/0?context=%7b%22Tid%22%3a%220a639cef-3452-4d82-8a6f-11f49ee14751%22%2c%22Oid%22%3a%2299dc5c82-d81c-4d92-9d97-ecb11bf453cc%22%7d">Ingresa a tu Reunion: TEAM 1 - Sesión 2</a>
+                          </div>
+                          <div class="col-lg-6">
+                              <a class="btn btn-outline-darker my-1" target="_blank" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_MzU2ZTk3YjAtNTA2Mi00YWQ1LWEzMzAtYWJkOWVjZTc1MmFi%40thread.v2/0?context=%7b%22Tid%22%3a%220a639cef-3452-4d82-8a6f-11f49ee14751%22%2c%22Oid%22%3a%2299dc5c82-d81c-4d92-9d97-ecb11bf453cc%22%7d">Ingresa a tu Reunion: TEAM 1 - Sesión 3</a>
+                          </div>
+                          <div class="col-lg-6">
+                              <a class="btn btn-outline-darker my-1" target="_blank" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_YzVkYzZiMTAtN2Q4NS00MmE3LWE0MmYtYzUxOTQyNWRiNWI4%40thread.v2/0?context=%7b%22Tid%22%3a%220a639cef-3452-4d82-8a6f-11f49ee14751%22%2c%22Oid%22%3a%2299dc5c82-d81c-4d92-9d97-ecb11bf453cc%22%7d">Ingresa a tu Reunion: TEAM 1 - Sesión 4</a>
+                          </div>
+                          <!---->
+                          <div class="col-lg-6">
+                              <a class="btn btn-outline-darker my-1" target="_blank" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_MTZlODM4ZDMtMTgyNy00ODBiLTgxMzMtNGIxNTM4Y2I3ZWI2%40thread.v2/0?context=%7b%22Tid%22%3a%220a639cef-3452-4d82-8a6f-11f49ee14751%22%2c%22Oid%22%3a%2299dc5c82-d81c-4d92-9d97-ecb11bf453cc%22%7d">Ingresa a tu Reunion: TEAM 2 - Sesión 1</a>
+                          </div>
+                          <div class="col-lg-6">
+                              <a class="btn btn-outline-darker my-1" target="_blank" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_YzQ5OWZlNjItMjExOC00OTk2LWJiYmItYWUzODc3Yzc5ODhh%40thread.v2/0?context=%7b%22Tid%22%3a%220a639cef-3452-4d82-8a6f-11f49ee14751%22%2c%22Oid%22%3a%2299dc5c82-d81c-4d92-9d97-ecb11bf453cc%22%7d">Ingresa a tu Reunion: TEAM 2 - Sesión 2</a>
+                          </div>
+                          <div class="col-lg-6">
+                              <a class="btn btn-outline-darker my-1" target="_blank" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_MTZlODM4ZDMtMTgyNy00ODBiLTgxMzMtNGIxNTM4Y2I3ZWI2%40thread.v2/0?context=%7b%22Tid%22%3a%220a639cef-3452-4d82-8a6f-11f49ee14751%22%2c%22Oid%22%3a%2299dc5c82-d81c-4d92-9d97-ecb11bf453cc%22%7d">Ingresa a tu Reunion: TEAM 2 - Sesión 3</a>
+                          </div>
+                          <div class="col-lg-6">
+                              <a class="btn btn-outline-darker my-1" target="_blank" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_YzQ5OWZlNjItMjExOC00OTk2LWJiYmItYWUzODc3Yzc5ODhh%40thread.v2/0?context=%7b%22Tid%22%3a%220a639cef-3452-4d82-8a6f-11f49ee14751%22%2c%22Oid%22%3a%2299dc5c82-d81c-4d92-9d97-ecb11bf453cc%22%7d">Ingresa a tu Reunion: TEAM 2 - Sesión 4</a>
+                          </div>
+                          <!---->
+                          <div class="col-lg-6">
+                              <a class="btn btn-outline-darker my-1" target="_blank" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_YTk5ZmFhMGYtZTkyNC00ZGU4LTk1NjctMzU2ZmU0NTRjMTZi%40thread.v2/0?context=%7b%22Tid%22%3a%220a639cef-3452-4d82-8a6f-11f49ee14751%22%2c%22Oid%22%3a%2299dc5c82-d81c-4d92-9d97-ecb11bf453cc%22%7d">Ingresa a tu Reunion: TEAM 3 - Sesión 1</a>
+                          </div>
+                          <div class="col-lg-6">
+                              <a class="btn btn-outline-darker my-1" target="_blank" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_Nzk0OGU1YjQtNTQ3Yi00NDZkLWJmY2QtMmUyNjVmMGNhYWQ0%40thread.v2/0?context=%7b%22Tid%22%3a%220a639cef-3452-4d82-8a6f-11f49ee14751%22%2c%22Oid%22%3a%2299dc5c82-d81c-4d92-9d97-ecb11bf453cc%22%7d">Ingresa a tu Reunion: TEAM 3 - Sesión 2</a>
+                          </div>
+                          <div class="col-lg-6">
+                              <a class="btn btn-outline-darker my-1" target="_blank" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_YTk5ZmFhMGYtZTkyNC00ZGU4LTk1NjctMzU2ZmU0NTRjMTZi%40thread.v2/0?context=%7b%22Tid%22%3a%220a639cef-3452-4d82-8a6f-11f49ee14751%22%2c%22Oid%22%3a%2299dc5c82-d81c-4d92-9d97-ecb11bf453cc%22%7d">Ingresa a tu Reunion: TEAM 3 - Sesión 3</a>
+                          </div>
+                          <div class="col-lg-6">
+                              <a class="btn btn-outline-darker my-1" target="_blank" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_Nzk0OGU1YjQtNTQ3Yi00NDZkLWJmY2QtMmUyNjVmMGNhYWQ0%40thread.v2/0?context=%7b%22Tid%22%3a%220a639cef-3452-4d82-8a6f-11f49ee14751%22%2c%22Oid%22%3a%2299dc5c82-d81c-4d92-9d97-ecb11bf453cc%22%7d">Ingresa a tu Reunion: TEAM 3 - Sesión 4</a>
+                          </div>
+                          <!---->
+                          <div class="col-lg-6">
+                              <a class="btn btn-outline-darker my-1" target="_blank" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_NjhlMjdmZWItMjFkNi00YTZkLWIwNTktMTkzMDE0Y2M4MjQ5%40thread.v2/0?context=%7b%22Tid%22%3a%220a639cef-3452-4d82-8a6f-11f49ee14751%22%2c%22Oid%22%3a%2299dc5c82-d81c-4d92-9d97-ecb11bf453cc%22%7d">Ingresa a tu Reunion: TEAM 4 - Sesión 1</a>
+                          </div>
+                          <div class="col-lg-6">
+                              <a class="btn btn-outline-darker my-1" target="_blank" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_NTRkOWE5ZTMtYzA3ZS00YjllLWE0MTktNjNkMDk3NjdiNTIw%40thread.v2/0?context=%7b%22Tid%22%3a%220a639cef-3452-4d82-8a6f-11f49ee14751%22%2c%22Oid%22%3a%2299dc5c82-d81c-4d92-9d97-ecb11bf453cc%22%7d">Ingresa a tu Reunion: TEAM 4 - Sesión 2</a>
+                          </div>
+                          <div class="col-lg-6">
+                              <a class="btn btn-outline-darker my-1" target="_blank" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_NjhlMjdmZWItMjFkNi00YTZkLWIwNTktMTkzMDE0Y2M4MjQ5%40thread.v2/0?context=%7b%22Tid%22%3a%220a639cef-3452-4d82-8a6f-11f49ee14751%22%2c%22Oid%22%3a%2299dc5c82-d81c-4d92-9d97-ecb11bf453cc%22%7d">Ingresa a tu Reunion: TEAM 4 - Sesión 3</a>
+                          </div>
+                          <div class="col-lg-6">
+                              <a class="btn btn-outline-darker my-1" target="_blank" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_NTRkOWE5ZTMtYzA3ZS00YjllLWE0MTktNjNkMDk3NjdiNTIw%40thread.v2/0?context=%7b%22Tid%22%3a%220a639cef-3452-4d82-8a6f-11f49ee14751%22%2c%22Oid%22%3a%2299dc5c82-d81c-4d92-9d97-ecb11bf453cc%22%7d">Ingresa a tu Reunion: TEAM 4 - Sesión 4</a>
+                          </div>
+
+                      </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!---->
+            <!-- Modal -->
+            <div class="modal fade" id="donativosMexicoNorte" tabindex="-1" role="dialog" aria-labelledby="donativosMexicoNorte" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">DONATIVO U OFRENDA CGL</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body text-justify py-1">
+                          Este donativo se utilizará al 100% para apoyar a otra Cumbre dentro de México o en otro país.
+                          Este donativo es completamente independiente a la ofrenda que se da en la Iglesia.
+                          <br>
+                          Puedes hacer tu donativo a través de PAYPAL
+                          <br>
+                          <br>
+                        <center>
+                           <a class="btn btn-default" href="https://www.paypal.com/donate?hosted_button_id=YRNJERTFXEFRS" target="_blank">Ir a Paypal</a>
+                        </center>
+                          <br>
+                          Puedes hacer depósito o transferencia a la siguiente cuenta bancaria:
+                          <br>
+                          <br>
+                          <b>BANAMEX</b>
+                            <br>
+                          <b>Beneficiario:</b><br> Primera Iglesia Bautista de Ciudad Satélite, A.R.
+                            <br>
+                          <b>Cuenta:</b> 7874003
+                            <br>
+                          <b>SUC.</b> 573
+                            <br>
+                          <b>CLABE INTERBANCARIA:</b> 002 180 05737874003 1
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!---->
+            <!-- Modal -->
+            <div class="modal fade" id="donativoMexicoOriente" tabindex="-1" role="dialog" aria-labelledby="donativoMexicoOriente" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">DONATIVO U OFRENDA CGL Mexico Oriente</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body text-justify py-1">
+                          Este donativo se utilizará al 100% para apoyar a otra Cumbre dentro de México o en otro país.
+                          Este donativo es completamente independiente a la ofrenda que se da en la Iglesia.
+                          <br>
+                          <br>
+                          Puedes hacer depósito o transferencia a la siguiente cuenta bancaria:
+                          <br>
+                          <br>
+                          <b>BANCO SANTANDER </b>
+                            <br>
+                          <b>Beneficiario:</b><br> COMUNIDAD CRISTIANA CONQUISTANDO FRONTERAS A.R.
+                            <br>
+                          <b>Cuenta:</b> 65-50390066-1
+                            <br>
+                          <b>Referencia:</b> CGL2020-O
+                            <br>
+                          <b>CLABE INTERBANCARIA:</b> 014180655039006611
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!---->
+            <!-- Modal -->
+            <div class="modal fade" id="donativoGuadalajara" tabindex="-1" role="dialog" aria-labelledby="donativoGuadalajara" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">DONATIVO U OFRENDA CGL Guadalajara</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body text-justify py-1">
+                          Este donativo se utilizará al 100% para apoyar a otra Cumbre dentro de México o en otro país.
+                          Este donativo es completamente independiente a la ofrenda que se da en la Iglesia.
+                          <br>
+                          Puedes hacer tu donativo a través de PAYPAL
+                          <br>
+                          <br>
+                        <center>
+                           <a class="btn btn-default" href="https://www.paypal.com/paypalme/robbierembao" target="_blank">Ir a Paypal</a>
+                        </center>
+                          <br>
+                          Puedes hacer depósito o transferencia a la siguiente cuenta bancaria:
+                          <br>
+                          <br>
+                          <b>BANCOMER </b>
+                            <br>
+                          <b>Beneficiario:</b><br> Roberto Rembao
+                            <br>
+                          <b>Cuenta:</b> 294 218 3668
+                            <br>
+                          <b>Referencia:</b> Donativo CGL 2020
+                            <br>
+                          <b>CLABE INTERBANCARIA:</b> 012 320 02942183668 3
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!---->
+            <!-- Modal -->
+            <div class="modal fade" id="donativoMonterrey" tabindex="-1" role="dialog" aria-labelledby="donativoMonterrey" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">DONATIVO U OFRENDA CGL Monterrey</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body text-justify py-1">
+                          Este donativo se utilizará al 100% para apoyar a otra Cumbre dentro de México o en otro país.
+                          Este donativo es completamente independiente a la ofrenda que se da en la Iglesia.
+                          <br>
+                          Puedes hacer tu donativo a través de PAYPAL
+                          <br>
+                          <br>
+                        <center>
+                           <a class="btn btn-default" href="https://paypal.me/cglmty" target="_blank">Ir a Paypal</a>
+                        </center>
+                          <br>
+                          <br>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!----><!-- Modal -->
+            <div class="modal fade" id="donativoDurango" tabindex="-1" role="dialog" aria-labelledby="donativoDurango" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">DONATIVO U OFRENDA CGL Durango</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body text-justify py-1">
+                          Este donativo se utilizará al 100% para apoyar a otra Cumbre dentro de México o en otro país.
+                          Este donativo es completamente independiente a la ofrenda que se da en la Iglesia.
+                          <br>
+                          Puedes hacer tu donativo a esta cuenta bancaria:
+                          <br>
+                          <br>
+                            <br>
+                                    <br>
+                                    <b>Banco Afirme</b>
+                                    <br>
+                                    <b>Beneficiario:</b> José Luis Sáenz Ceniceros
+                                    <br>
+                                    <b>Cuenta:</b> 827989533
+                                    <br>
+                                    <b>Clabe Interbancaria:</b> 062190008279895336
+                                    <br>
+                                    <b>Num. de Tarjeta:</b>  5359 4304 0232 3278
+                                    <br>
+                                    <b>Referencia:</b>  Donativo Cumbre
+                          <br>
+                          <br>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!---->
+             <!-- Modal -->
+            <div class="modal fade" id="donativoCancunToluca" tabindex="-1" role="dialog" aria-labelledby="donativoCancunToluca" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">DONATIVO U OFRENDA CGL Mexico</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body text-justify py-1">
+                          Únete a más de 400,000 líderes que buscan transformar al mundo desde su trinchera,
+                      trabajando, inspirando y contribuyendo
+                        para que haya más gente impactada por enseñanzas con oradores de primer nivel
+                      que reten e inspiren a los líderes,
+                      a través de enseñanzas prácticas para hacer de éste un mundo mejor.
+                      <br>
+                      <br>
+                    Tu contribución es muy importante!!!
+                          <br>
+                          Puedes hacer tu donativo a través de este link
+                          <br>
+                          <br>
+                        <center>
+                           <a class="btn btn-default" href="https://www.eventbrite.com.mx/e/unidos-por-la-red-global-de-liderazgo-tickets-129493912779" target="_blank">Donativos</a>
+                        </center>
+                          <br>
+                          <br>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!---->
+            <!-- Modal -->
+            <div hidden class="modal fade show" id="TeamEditionLOL" tabindex="-1" role="dialog" aria-labelledby="exampleModalTELabel" aria-modal="true" style="display: block; background-color: rgba(0,0,0,0.2)">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Agradecemos tu asistencia</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body py-0   ">
+                    <small>
+                                    <center class="text-center">
+                                    <span class="h3">Nos complace presentarles la nueva versión del <br><b>Team Edition</b></span>
+                                    <br>
+                                    <a href="https://glsteamedition.com" target="_blank">
+                                    <img class="img-fluid" style="max-height: 200px;" src="{% static 'assets/img/teamedition-web-preview.jpeg' %}">
+                                    </a>
+                                    <br>
+                                    <br>
+                                    Una aplicación de Video-OnDemand disponible para todas las plataformas.
+                                    <br>
+                                        Disfruta del contenido de <strong>Volkswagen NAR Supplier Quality Day 2021</strong> en tu Smartphone, Tablet y Computadora.
+                                    <br>
+                                    <br>
+                                    Para adquirir tu licencia, da click a continuacion y sigue las instrucciones en la pagina.
+                                    <br>
+                                    <br>
+                      <button type="button" class="btn btn-primary">Adquirir el Team Edition</button>
+                  </center>
+                                    <br>
+                            </small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!---->
+        </div>
+        <!-- ENDS Main content -->
+        <!-- BEGIN lang-->
+{#        {% include './languages.html' %}#}
+        <!-- END lang-->
+        <!-- BEGINS JS -->
+          <!-- Argon Scripts -->
+          <!-- Core -->
+          <script src="{% static 'assets/vendor/jquery/dist/jquery.min.js' %}"></script>
+          <script src="{% static 'assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+          <script src="{% static 'assets/vendor/js-cookie/js.cookie.js' %}"></script>
+          <script src="{% static 'assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js' %}"></script>
+          <script src="{% static 'assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js' %}"></script>
+          <!-- Optional JS -->
+          <script src="{% static 'assets/vendor/chart.js/dist/Chart.min.js' %}"></script>
+          <script src="{% static 'assets/vendor/chart.js/dist/Chart.extension.js' %}"></script>
+          <script src="{% static 'assets/vendor/jvectormap-next/jquery-jvectormap.min.js' %}"></script>
+          <script src="{% static 'assets/js/vendor/jvectormap/jquery-jvectormap-world-mill.js' %}"></script>
+          <!-- Argon JS -->
+          <script src="{% static 'assets/js/argon.js' %}"></script>
+        <!-- ENDS JS -->
+    </body>
+    <!-- ENDS BODY -->
+</html>
