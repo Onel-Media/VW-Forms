@@ -1,0 +1,13 @@
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+User=root
+Group=www-data
+WorkingDirectory=/home/VW-Forms
+ExecStart=/home/VW-Forms/venv/bin/gunicorn  --access-logfile -  --workers 3  --bind unix:/run/gunicorn.sock  vw_forms.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
