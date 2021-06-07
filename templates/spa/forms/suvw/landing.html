@@ -1,0 +1,49 @@
+{% extends './base/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block title %} SUVW {% endblock %}
+{% block description %} Bienvenidos a SUVW {% endblock %}
+{% block content %}
+    <div class="page-header register-page header-filter" filter-color="black" style=" padding-bottom: 50px;">
+        <div class="container">
+            <br>
+            <div class="row">
+                <div class="col-lg-8 col-md-8 ml-auto mr-auto mx-3 my-6">
+                    <div class="card card-login card-hidden">
+                        <div class="card-body">
+                            <section class="">
+                                <div class="">
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-md-8">
+                                            <center>
+                                                <img class="img-fluid" src="{% static 'assets/img/icon-vw.png' %}" style="max-height: 30px;">
+                                            </center>
+                                            <br>
+                                            <!-- -->
+                                            <div class="col-lg-12 p-1">
+                                                <a class="btn btn-block btn-outline-darker" href="{% url 'encuesta' %}">Encuesta</a>
+                                            </div>
+                                            <!-- -->
+                                            <div class="col-lg-12 p-1">
+                                                <a class="btn btn-block btn-outline-darker" href="{% url 'privacidad' %}">Aviso de Privacidad y Uso de Imagen</a>
+                                            </div>
+                                            <!-- -->
+                                            <div class="col-lg-12 p-1">
+                                                <a class="btn btn-block btn-outline-darker" href="{% url 'privacidad-2' %}">Aviso de Privacidad</a>
+                                            </div>
+                                            <!-- -->
+                                            <div class="col-lg-12 p-1">
+                                                <a class="btn btn-block btn-outline-darker" href="{% url 'responsiva' %}">Carta Responsiva</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
