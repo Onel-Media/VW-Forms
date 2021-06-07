@@ -48,7 +48,7 @@ class SUVM_Privacidad2CreateView(CreateView):
         'acepto_terminos',
     )
     form = PrivacidadForm
-    template_name = 'spa/forms/suvw/privacidad.html'
+    template_name = 'spa/forms/suvw/privacidad_2.html'
     success_url = '../'
 
     def get_context_data(self, **kwargs):
@@ -65,7 +65,7 @@ class SUVM_ResponsivaCreateView(CreateView):
         'acepto_terminos',
     )
     form = PrivacidadForm
-    template_name = 'spa/forms/suvw/privacidad.html'
+    template_name = 'spa/forms/suvw/responsiva.html'
     success_url = '../'
 
     def get_context_data(self, **kwargs):
