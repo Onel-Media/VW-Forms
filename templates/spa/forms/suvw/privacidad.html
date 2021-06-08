@@ -20,16 +20,16 @@
               <div class="row px-5">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-alternative" id="exampleFormControlInput1" placeholder="Nombre">
+                      {{ form.nombre |add_class:"form-control form-control-alternative" |attr:"placeholder:Nombre" }}
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-alternative" id="exampleFormControlInput1" placeholder="Apellido">
+                      {{ form.apellido |add_class:"form-control form-control-alternative" |attr:"placeholder:Apellido" }}
                   </div>
                 </div>
                   <div class="custom-control custom-checkbox mb-3">
-                      <input class="custom-control-input" id="customCheck1" type="checkbox">
+                      {{ form.acepto_terminos |add_class:"custom-control-input" |attr:"checked" }}
                       <label class="custom-control-label" for="customCheck1">Acepto Aviso de privacidad y uso de imagen</label>
                   </div>
               </div>
