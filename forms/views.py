@@ -17,6 +17,7 @@ class SUVM_EncuestaCreateView(CreateView):
         'q3_calificacion_del_contenido_presentaciones',
         'q4_calificacion_del_informacion_interaccion',
         'q5_calificacion_general',
+        'q6_comentarios',
     )
     form = EncuestaForm
     template_name = 'spa/forms/suvw/encuesta.html'

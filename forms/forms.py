@@ -20,6 +20,7 @@ class EncuestaForm(forms.ModelForm):
     q3_calificacion_del_contenido_presentaciones = forms.ChoiceField(widget=forms.RadioSelect(choices=CHOICES_CALIFICACION))
     q4_calificacion_del_informacion_interaccion = forms.ChoiceField(widget=forms.RadioSelect(choices=CHOICES_CALIFICACION))
     q5_calificacion_general = forms.ChoiceField(widget=forms.RadioSelect(choices=CHOICES_CALIFICACION))
+    q6_comentarios = forms.Textarea()
 
     class Meta:
         model = SUVW_Encuesta
@@ -29,6 +30,7 @@ class EncuestaForm(forms.ModelForm):
             'q3_calificacion_del_contenido_presentaciones',
             'q4_calificacion_del_informacion_interaccion',
             'q5_calificacion_general',
+            'q6_comentarios',
         )
         widgets = {
             'q1_calificacion_del_lugar': forms.RadioSelect,

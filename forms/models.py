@@ -25,6 +25,7 @@ class SUVW_Encuesta(models.Model):
     q4_calificacion_del_informacion_interaccion = models.CharField(choices=CHOICES_CALIFICACION, default='50',
                                                                    max_length=3)
     q5_calificacion_general = models.CharField(choices=CHOICES_CALIFICACION, default='50', max_length=3)
+    q6_comentarios = models.TextField(null=True)
     timestamp = models.DateTimeField(default=now)
 
     def __str__(self):
