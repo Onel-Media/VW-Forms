@@ -34,11 +34,13 @@
                 </div>
                   <div class="custom-control custom-checkbox mb-3 ml-3">
                       {{ form.acepto_terminos_privacidad |add_class:"custom-control-input" |attr:"checked" }}
-                      <label class="custom-control-label" for="customCheck1">Acepto aviso de privacidad</label>
+                      <label class="custom-control-label" for="customCheck1"><a href="{% url 'avisos' %}" target="_blank" class="text-darker">Acepto aviso de privacidad</a></label>
+                      <br>
                       {{ form.acepto_recepcion_giveaway |add_class:"custom-control-input" |attr:"checked" }}
-                      <label class="custom-control-label" for="customCheck1">Acepto recepción de give away</label>
+                      <label class="custom-control-label" for="customCheck1"><a href="{% url 'avisos' %}" target="_blank" class="text-darker">Acepto recepción de give away</a></label>
+                      <br>
                       {{ form.acepto_uso_imagen |add_class:"custom-control-input" |attr:"checked" }}
-                      <label class="custom-control-label" for="customCheck1">Acepto aviso de Uso de Imagen</label>
+                      <label class="custom-control-label" for="customCheck1"><a href="{% url 'avisos' %}" target="_blank" class="text-darker">Acepto aviso de Uso de Imagen</a></label>
                   </div>
               </div>
                 <br>
