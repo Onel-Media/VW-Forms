@@ -90,16 +90,7 @@ class ResponsivaForm(forms.ModelForm):
 ##
 class NJEncuestaForm(forms.ModelForm):
     CHOICES_CALIFICACION = [
-        ('10', '10'),
-        ('20', '20'),
-        ('30', '30'),
-        ('40', '40'),
-        ('50', '50'),
-        ('60', '60'),
-        ('70', '70'),
-        ('80', '80'),
-        ('90', '90'),
-        ('100', '100'),
+        ('100', '100'), ('90', '90'), ('80', '80'), ('70', '70'), ('60', '60'), ('50', '50'), ('40', '40'), ('30', '30'), ('20', '20'), ('10', '10'),
     ]
     q1_calificacion_del_formato = forms.ChoiceField(widget=forms.RadioSelect(choices=CHOICES_CALIFICACION))
     q2_calificacion_de_medidas_sanidad = forms.ChoiceField(widget=forms.RadioSelect(choices=CHOICES_CALIFICACION))

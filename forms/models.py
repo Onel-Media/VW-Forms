@@ -86,16 +86,16 @@ class TextArticle(models.Model):
 ##
 class NJ_Encuesta(models.Model):
     CHOICES_CALIFICACION = [
-        ('10', '10'),
-        ('20', '20'),
-        ('30', '30'),
-        ('40', '40'),
-        ('50', '50'),
-        ('60', '60'),
-        ('70', '70'),
-        ('80', '80'),
-        ('90', '90'),
         ('100', '100'),
+        ('90', '90'),
+        ('80', '80'),
+        ('70', '70'),
+        ('60', '60'),
+        ('50', '50'),
+        ('40', '40'),
+        ('30', '30'),
+        ('20', '20'),
+        ('10', '10'),
     ]
     q1_calificacion_del_formato = models.CharField(choices=CHOICES_CALIFICACION, default='50', max_length=3)
     q2_calificacion_de_medidas_sanidad = models.CharField(choices=CHOICES_CALIFICACION, default='50', max_length=3)
