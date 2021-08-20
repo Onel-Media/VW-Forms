@@ -17,8 +17,10 @@ class EncuestaForm(forms.ModelForm):
     ]
     q1_calificacion_del_lugar = forms.ChoiceField(widget=forms.RadioSelect(choices=CHOICES_CALIFICACION))
     q2_calificacion_del_duracion = forms.ChoiceField(widget=forms.RadioSelect(choices=CHOICES_CALIFICACION))
-    q3_calificacion_del_contenido_presentaciones = forms.ChoiceField(widget=forms.RadioSelect(choices=CHOICES_CALIFICACION))
-    q4_calificacion_del_informacion_interaccion = forms.ChoiceField(widget=forms.RadioSelect(choices=CHOICES_CALIFICACION))
+    q3_calificacion_del_contenido_presentaciones = forms.ChoiceField(
+        widget=forms.RadioSelect(choices=CHOICES_CALIFICACION))
+    q4_calificacion_del_informacion_interaccion = forms.ChoiceField(
+        widget=forms.RadioSelect(choices=CHOICES_CALIFICACION))
     q5_calificacion_general = forms.ChoiceField(widget=forms.RadioSelect(choices=CHOICES_CALIFICACION))
     q6_comentarios = forms.Textarea()
 
@@ -82,3 +84,46 @@ class ResponsivaForm(forms.ModelForm):
             'acepto_terminos',
         )
 
+
+##
+# Nuevo Jetta Forms
+##
+class NJEncuestaForm(forms.ModelForm):
+    CHOICES_CALIFICACION = [
+        ('10', '10'),
+        ('20', '20'),
+        ('30', '30'),
+        ('40', '40'),
+        ('50', '50'),
+        ('60', '60'),
+        ('70', '70'),
+        ('80', '80'),
+        ('90', '90'),
+        ('100', '100'),
+    ]
+    q1_calificacion_del_formato = forms.ChoiceField(widget=forms.RadioSelect(choices=CHOICES_CALIFICACION))
+    q2_calificacion_de_medidas_sanidad = forms.ChoiceField(widget=forms.RadioSelect(choices=CHOICES_CALIFICACION))
+    q3_calificacion_de_duracion = forms.ChoiceField(
+        widget=forms.RadioSelect(choices=CHOICES_CALIFICACION))
+    q4_calificacion_de_presentacion_producto = forms.ChoiceField(
+        widget=forms.RadioSelect(choices=CHOICES_CALIFICACION))
+    q5_calificacion_general_experiencia = forms.ChoiceField(widget=forms.RadioSelect(choices=CHOICES_CALIFICACION))
+    q6_comentarios = forms.Textarea()
+
+
+class NJRegistroForm(forms.ModelForm):
+    nombre = forms.CharField(max_length=149)
+    apellido = forms.CharField(max_length=149)
+    acepto_recepcion_giveaway = forms.BooleanField()
+    acepto_uso_imagen = forms.BooleanField()
+    acepto_terminos_privacidad = forms.BooleanField()
+
+    class Meta:
+        model = SUVW_Privacidad
+        fields = (
+            'nombre',
+            'apellido',
+            'acepto_uso_imagen',
+            'acepto_terminos_privacidad',
+            'acepto_recepcion_giveaway',
+        )
