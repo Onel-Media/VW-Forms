@@ -1,6 +1,6 @@
 server {
     listen 80;
-    server_name suvw.info www.suvw.info 143.244.157.17;
+    server_name nuevojetta.info  www.nuevojetta.info 137.184.7.104;
     #esto es para permitir archivos de  menos de 100 MB
     client_max_body_size 100M;
 
