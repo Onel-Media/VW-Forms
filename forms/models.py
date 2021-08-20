@@ -2,9 +2,11 @@ from django.db import models
 from django.utils.timezone import now
 from djrichtextfield.models import RichTextField
 
+
 # Create your models here.
-
-
+##
+# SUVW ENCUESTA
+##
 class SUVW_Encuesta(models.Model):
     CHOICES_CALIFICACION = [
         ('10', '10'),
@@ -74,3 +76,10 @@ class TextArticle(models.Model):
 
     def __str__(self):
         return self.titulo
+
+
+##
+# ENCUESTA NUEVO JETTAA
+##
+
+

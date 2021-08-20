@@ -1,8 +1,8 @@
 {% extends './base/base.html' %}
 {% load static %}
 {% load widget_tweaks %}
-{% block title %} SUVW {% endblock %}
-{% block description %} Bienvenidos a SUVW {% endblock %}
+{% block title %} Nuevo Jetta {% endblock %}
+{% block description %} Bienvenidos a Nuevo Jetta {% endblock %}
 {% block content %}
     <div class="page-header register-page header-filter" filter-color="black" style=" padding-bottom: 50px;">
         <div class="container">
@@ -25,16 +25,17 @@
                                             </div>
                                             <!-- -->
                                             <div class="col-lg-12 p-1">
-                                                <a class="btn btn-block btn-outline-darker" href="{% url 'privacidad' %}">Aviso de Privacidad y Uso de Imagen</a>
+                                                <a class="btn btn-block btn-outline-darker" href="{% url 'privacidad' %}">Registro</a>
                                             </div>
                                             <!-- -->
                                             <div class="col-lg-12 p-1">
-                                                <a class="btn btn-block btn-outline-darker" href="{% url 'privacidad-2' %}">Aviso de Privacidad</a>
+                                                <a class="btn btn-block btn-outline-darker" href="{% url 'privacidad-2' %}">Avisos</a>
                                             </div>
                                             <!-- -->
-                                            <div class="col-lg-12 p-1">
+                                            <div HIDDEN class="col-lg-12 p-1">
                                                 <a class="btn btn-block btn-outline-darker" href="{% url 'responsiva' %}">Carta Responsiva</a>
                                             </div>
+                                            <br>
                                         </div>
                                     </div>
                                 </div>
